@@ -39,6 +39,5 @@ Design_rec/
     │   └── npy/
     │
     │── zernikes/
-```text
 
-# Active dataset design for one of the 6 beam shapes, e.g., RecTophat shape
+asdklfasdjfklas
