@@ -132,3 +132,8 @@ The entire pipeline of the simulation-driven differentiable active learning fram
   `python3 train_unet.py --data Design_rec --batch_size 2 --gpu 1 --seed 123 --pth_name rec.pth.tar --val_vis_path rec_result --eval`
 
    - (7) Test on the InShaPe test set (CPU data).
+
+# Evaluate the performance of the generated training dataset
+
+- 1, Train UNet-T model from scratch on the generated training set. As already indicated in the previous section, for any generated dataset residing in any design folder, you should run the following command to train UNet-T on it:
+  `python3 train_unet.py --data Design_rec --epochs 15 --batch_size 2 --gpu 0 --lr 0.0002 --step_size 2 --seed 123 --pth_name rec.pth.tar`
