@@ -27,7 +27,7 @@ Design_rec/
 │   └── phase/
 │   │   ├── img/
 │   │   └── npy/
-│   │── zernikes/
+│   └── zernikes/
 │
 └── test_set/
     ├── intensity/
@@ -37,7 +37,7 @@ Design_rec/
     │   ├── img/
     │   └── npy/
     │
-    │── zernikes/
+    └── zernikes/
 ```
 
 2, For each beam shape, the corresponding test set must be copy-pasted from the original [Processed InShaPe dataset](https://doi.org/10.6084/m9.figshare.30131893.v4) to the test_set subfolder of the corresponding design folder above.
