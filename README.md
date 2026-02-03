@@ -1,5 +1,4 @@
-<img width="2202" height="115" alt="image" src="https://github.com/user-attachments/assets/416e2157-8c42-4b05-be62-fe6b4ffe748e" /># Continual-SDDAL
-The continual learning in Simulation-Driven Differentiable Active Learning framework for efficient data generation
+# The continual learning in Simulation-Driven Differentiable Active Learning framework for efficient data generation
 
 In the initial commit to this Continual-SDDAL repository, an original SDDAL (Simulation-Driven Differentiable Active Learning) framework was pushed into this repository. The following instructures are about how to run different functionalities in the initially committed SDDAL. After the continual researcher is familiar with the initially committed original SDDAL, she will proceed to develop an continual learning scheme inside the SDDAL framework based on the initially pushed SDDAL code base.
 
