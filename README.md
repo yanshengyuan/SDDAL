@@ -68,3 +68,8 @@ rec_result/
 
 # Running SDDAL framework for dataset design
 
+1, Quick experiment:
+
+   (1) Create 1000 initial samples by randomly sampling Zernike coefficients from uniform(-1.5, 1.5).
+   (2) asdfasdfasfd
+
