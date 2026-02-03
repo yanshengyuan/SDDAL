@@ -69,11 +69,10 @@ rec_result/
 
 - 1, Quick experiment:
   Command:
-```bash
- bash SDDAL.sh rec 0.0002 1000 true 9999 9999 0 9999 9999
+  `bash SDDAL.sh rec 0.0002 1000 true 9999 9999 0 9999 9999`
    - (1) Create 1000 initial samples by randomly sampling Zernike coefficients from uniform(-1.5, 1.5).
-```bash
- bash SDDAL.sh rec 9999 9999 false 1 200 0 5 9999 true
+
+  `bash SDDAL.sh rec 9999 9999 false 1 200 0 5 9999 true`
    
    - (2) Train a Quantile UNet model on the 1000 initial samples.
 
