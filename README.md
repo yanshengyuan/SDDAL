@@ -139,3 +139,12 @@ The entire pipeline of the simulation-driven differentiable active learning fram
 ```text
 python3 train_unet.py --data Design_rec --epochs 15 --batch_size 2 --gpu 0 --lr 0.0002 --step_size 2 --seed 123 --pth_name rec.pth.tar
 ```
+- 2, Test trained UNet-T model on InShaPe (CPU) test set. As already indicated in the previous section, you should run the following command for inference on test set:
+```text
+python3 train_unet.py --data Design_rec --batch_size 2 --gpu 1 --seed 123 --pth_name rec.pth.tar --val_vis_path rec_result --eval
+```
+- 3, The predicted phase map, the ground-truth phase map, and the ground-truth intensity are stored in ./rec_result for RecTophat shape for example. Now switch into the result folder:
+```text
+cd ./rec_result/
+```
+- 4, Inside the result folder you will see a Python script named "FRCM.py", please create a new folder named "diff" in the current directory, and then run the following command:
