@@ -67,9 +67,9 @@ rec_result/
 
 # Running SDDAL framework for dataset design
 
-1, Quick experiment:
+- Item Quick experiment:
 
-   (1) Create 1000 initial samples by randomly sampling Zernike coefficients from uniform(-1.5, 1.5).
+   - Sub-item (1) Create 1000 initial samples by randomly sampling Zernike coefficients from uniform(-1.5, 1.5).
    
    (2) Train a Quantile UNet model on the 1000 initial samples.
 
