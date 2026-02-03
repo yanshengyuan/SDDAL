@@ -67,14 +67,14 @@ rec_result/
 
 # Running SDDAL framework for dataset design
 
-- Item Quick experiment:
+- Quick experiment:
 
-   - Sub-item (1) Create 1000 initial samples by randomly sampling Zernike coefficients from uniform(-1.5, 1.5).
+   - (1) Create 1000 initial samples by randomly sampling Zernike coefficients from uniform(-1.5, 1.5).
    
-   (2) Train a Quantile UNet model on the 1000 initial samples.
+   - (2) Train a Quantile UNet model on the 1000 initial samples.
 
-   (3) SDDAL uses the PBF/LB-M beam shaping simulation and trained Quantile UNet-T for uncertainty sampling to generate 1000 active learned samples.
+   - (3) SDDAL uses the PBF/LB-M beam shaping simulation and trained Quantile UNet-T for uncertainty sampling to generate 1000 active learned samples.
 
-   (4) The 1000 initial samples + 1000 active learned samples is the final 2000-sample training set.
+   - (4) The 1000 initial samples + 1000 active learned samples is the final 2000-sample training set.
 
-   (5) Train a randomly initialized UNet-T model on the final 2000-sample training set (GPU data) then test on the InShaPe test set (CPU data).
+   - (5) Train a randomly initialized UNet-T model on the final 2000-sample training set (GPU data) then test on the InShaPe test set (CPU data).
