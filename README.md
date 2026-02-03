@@ -7,6 +7,14 @@ In the initial commit to this Continual-SDDAL repository, an original SDDAL (Sim
 
 Before running any experiments, the following preparations must be made:
 
-1, abc
+1, Establish 6 folders "Design_rec", "Design_ring", "Design_chair", "Design_gaussian", "Design_hat", and "Design_tear" with the same subfolder structure inside:
+
+----Design_rec
+
+   --latest_uncertainty
+
+--|
+
+   --models
 
 # Active dataset design for one of the 6 beam shapes, e.g., RecTophat shape
