@@ -1,6 +1,6 @@
-# Continual learning with Simulation-Driven Differentiable Active Learning (SDDAL) framework for efficient phase retrieval data generation
+# Simulation-Driven Differentiable Active Learning (SDDAL) for phase retrieval data efficiency
 
-In the initial commit to this Continual-SDDAL repository, an original SDDAL (Simulation-Driven Differentiable Active Learning) framework was pushed into this repository. The following instructions are about how to run different functionalities in the initially committed SDDAL. After the continual learning researcher is familiar with the initially committed original SDDAL, she will proceed to develop an continual learning scheme inside the SDDAL framework based on the initially pushed SDDAL code base.
+In the initial commit to this repository, an original SDDAL (Simulation-Driven Differentiable Active Learning) framework of 3rd Feb 2026 was pushed into this repository. The following instructions are about how to run different functionalities in the initially committed SDDAL. Further scientific and technical improvements may be made shortly in future.
 
 # Data and folder preparation
 
@@ -210,19 +210,19 @@ This command will start a gradient descent fitting on a batch of Zernike coeffic
 
 # Copyright & Citation
 
-© 2026 Shengyuan Yan (ORCID: 0000-0002-7295-1687, Eindhoven University of Technology) & Ting Wu (Eindhoven University of Technology). All rights reserved.
+© 2026 Shengyuan Yan (ORCID: 0000-0002-7295-1687, Eindhoven University of Technology). All rights reserved.
 
 If you use any part of the code or datasets released in or generated from this repository in your research, please cite the following work:
 
-Ting Wu, Shengyuan Yan, *Continual learning with Simulation-Driven Differentiable Active Learning (SDDAL) framework for efficient phase retrieval data generation*, 2026. [GitHub Repository: Continual-SDDAL](https://github.com/yanshengyuan/Continual-SDDAL)
+Shengyuan Yan, *Simulation-Driven Differentiable Active Learning (SDDAL) for phase retrieval data efficiency*, 2026. [GitHub Repository: SDDAL](https://github.com/yanshengyuan/SDDAL)
 
 BibTeX format for citation:
 
 ```bibtex
 @misc{yan2026sddal,
-  author = {Shengyuan Yan and Ting Wu},
-  title = {Continual learning with Simulation-Driven Differentiable Active Learning (SDDAL) framework for efficient phase retrieval data generation},
+  author = {Shengyuan Yan},
+  title = {Simulation-Driven Differentiable Active Learning (SDDAL) for phase retrieval data efficiency},
   year = {2026},
   howpublished = {GitHub repository},
-  url = {https://github.com/yanshengyuan/Continual-SDDAL}
+  url = {https://github.com/yanshengyuan/SDDAL}
 }
