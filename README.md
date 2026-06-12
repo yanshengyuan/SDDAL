@@ -1,4 +1,4 @@
-# Continual learning with Simulation-Driven Differentiable Active Learning (SDDAL) framework for efficient phase retrieval data generation
+# Simulation-Driven Differentiable Active Learning (SDDAL) for the data efficiency of deep learning based phase retrieval
 
 This repository contains the codes of SDDAL (Simulation-Driven Differentiable Active Learning) framework. The following instructions are about how to run different functionalities in SDDAL.
 
