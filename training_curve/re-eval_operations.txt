@@ -1,0 +1,8 @@
+find Xray_* -mindepth 1 -maxdepth 1 -type d
+src="./evaluate.py"
+find Xray_* -mindepth 1 -maxdepth 1 -type d \
+    -exec cp -f "$src" "{}/evaluate.py" \;
+find Xray_* -mindepth 2 -maxdepth 2 -type f -name "evaluate.py" | wc -l
+find Xray_* -type d \( -name "I_gt" -o -name "Phi_gt" \) -exec rm -rf {} +
+find Xray_* -type d \( -name "I_gt" -o -name "Phi_gt" \) | wc -l
+find gaussian -type d \( -name "I_gt" -o -name "Phi_gt" \)
