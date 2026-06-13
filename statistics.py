@@ -11,7 +11,7 @@ from scipy.stats import ttest_ind
 # =========================================================
 # 0) Global display control
 # =========================================================
-SHOW_METRIC_VALUES_ON_POINTS = True
+SHOW_METRIC_VALUES_ON_POINTS = False
 
 # =========================================================
 # 0.1) External arguments
@@ -128,8 +128,8 @@ FIXED_METHOD_COLORS = {
     "poolal": "#00AEEF",
     "PoolAL": "#00AEEF",
 
-    "GA": "#FFB000",
-    "ga": "#FFB000",
+    "GA": "#E68A00",
+    "ga": "#E68A00",
 
     "DE": "#E6007E",
     "de": "#E6007E",
@@ -193,6 +193,65 @@ for method in methods:
     fallback_color_idx += 1
 
 # =========================================================
+# 0.4.1) Method line-style settings
+# =========================================================
+# Line styles are only used in mean±std figures.
+# Raw all-curves figures remain all-solid for readability.
+FIXED_METHOD_LINESTYLES = {
+    "random": "-",
+    "Random": "-",
+
+    "sddal": "-",
+    "SDDAL": "-",
+
+    "poolAL": "--",
+    "poolal": "--",
+    "PoolAL": "--",
+
+    "DE": "-.",
+    "de": "-.",
+
+    "GA": ":",
+    "ga": ":",
+
+    "PaPQS": (0, (12, 4)),
+    "papqs": (0, (12, 4)),
+    "PAPQS": (0, (12, 4)),
+}
+
+FALLBACK_METHOD_LINESTYLES = [
+    (0, (3, 2, 1, 2)),
+    (0, (8, 3, 2, 3)),
+    (0, (1, 2)),
+    (0, (6, 2, 1, 2, 1, 2)),
+    (0, (14, 4, 2, 4)),
+]
+
+method_linestyle_map = {}
+
+fallback_linestyle_idx = 0
+
+for method in methods:
+    if method in FIXED_METHOD_LINESTYLES:
+        linestyle = FIXED_METHOD_LINESTYLES[method]
+    else:
+        if fallback_linestyle_idx >= len(FALLBACK_METHOD_LINESTYLES):
+            raise ValueError(
+                "Not enough unique line styles for all selected methods. "
+                "Please add more styles to FALLBACK_METHOD_LINESTYLES."
+            )
+
+        linestyle = FALLBACK_METHOD_LINESTYLES[fallback_linestyle_idx]
+        fallback_linestyle_idx += 1
+
+    method_linestyle_map[method] = linestyle
+
+# Safety override: Prior sampling and SDDAL must both be solid lines.
+for _method in methods:
+    if _method.lower() in ["random", "sddal"]:
+        method_linestyle_map[_method] = "-"
+
+# =========================================================
 # 0.5) Font and layout settings
 # =========================================================
 NUMERIC_FONT_SCALE = 1.3
@@ -216,6 +275,11 @@ PRINT_P_VALUE_TABLE = True
 TABLE_FONT_SCALE_FOR_MANY_METHODS = True
 P_VALUE_TABLE_TOP_MARGIN = 0.05
 P_VALUE_TABLE_BOTTOM_MARGIN = 0.05
+
+# =========================================================
+# 0.7) Std-region display settings
+# =========================================================
+STD_REGION_ALPHA = 0.18
 
 # =========================================================
 # 1) Path settings
@@ -628,7 +692,7 @@ for metric_name, info in metric_info.items():
                 y_valid,
                 marker=marker_style,
                 markersize=5,
-                linewidth=2.8,
+                linewidth=1.8667,
                 linestyle="-",
                 color=color,
                 alpha=1.0,
@@ -657,7 +721,7 @@ for metric_name, info in metric_info.items():
                 color=method_color_map[method],
                 marker="o",
                 linestyle="-",
-                linewidth=3.0,
+                linewidth=2.0,
                 markersize=6,
                 label=method_label_map[method]
             )
@@ -720,9 +784,12 @@ for metric_name, info in metric_info.items():
     if not metric_exists:
         continue
 
+    # Only show the p-value row for SDDAL vs Prior sampling in the figure table.
+    # Other methods are still plotted and their p-values are still computed,
+    # but they are not displayed in the table under the mean±std curve.
     comparison_methods = [
         method for method in methods
-        if method != method_reference
+        if method != method_reference and method.lower() == "sddal"
     ]
 
     table_rows = 1 + len(comparison_methods)
@@ -804,7 +871,9 @@ for metric_name, info in metric_info.items():
             where=valid_mask,
             interpolate=True,
             color=color,
-            alpha=0.07,
+            alpha=STD_REGION_ALPHA,
+            linewidth=0.0,
+            edgecolor="none",
         )
 
         ax.plot(
@@ -812,8 +881,8 @@ for metric_name, info in metric_info.items():
             mean_arr[valid_mask],
             marker="o",
             markersize=5,
-            linewidth=3.2,
-            linestyle="-",
+            linewidth=2.1333,
+            linestyle=method_linestyle_map[method],
             color=color,
             alpha=1.0,
             label=method_label,
